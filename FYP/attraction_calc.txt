@@ -1,0 +1,80 @@
+x1=1;
+y1=1;
+up=0;down=0;left=0;right=0;upleft=0;upright=0;downleft=0;downright=0;
+        
+for iii=1:m1
+    for jjj=1:n1
+        attraction(iii,jjj)=0;
+        up=0;down=0;left=0;right=0;upleft=0;upright=0;downleft=0;downright=0;
+        if(((iii-1)<1)&&((jjj-1)<1))
+                up=1;upleft=1;upright=1;downleft=1;left=1;
+                 %fprintf('a(%d,%d)1,1',iii,jjj); 
+                 %display(a(iii,jjj));                
+        elseif(((iii+1)>m1)&&((jjj-1)<1))
+                left=1;down=1;downleft=1;downright=1;upleft=1;
+                %fprintf('a(%d,%d)3,1',iii,jjj); 
+                %display(a(iii,jjj));
+        elseif(((iii-1)<1)&&((jjj+1)>n1))
+                right=1;downright=1;upright=1;up=1;upleft=1;
+                %fprintf('a(%d,%d)1,3',iii,jjj); 
+                %display(a(iii,jjj));
+        elseif(((iii+1)>m1)&&((jjj+1)>n1))
+                right=1;down=1;downleft=1;downright=1;upright=1;
+                %fprintf('a(%d,%d)3,3',iii,jjj); 
+                %display(a(iii,jjj));
+        elseif(((iii-1)<1))
+                up=1;upleft=1;upright=1;
+                %fprintf('a(%d,%d)1,2',iii,jjj); 
+                %display(a(iii,jjj));
+        elseif(((jjj-1)<1))
+                left=1;upleft=1;downleft=1;
+                %fprintf('a(%d,%d)2,1',iii,jjj); 
+                %display(a(iii,jjj));
+        elseif(((iii+1)>m1))
+                down=1;downright=1;downleft=1;
+                %fprintf('a(%d,%d)3,2',iii,jjj); 
+                %display(a(iii,jjj));
+        elseif(((jjj+1)>n1))
+                right=1;downright=1;upright=1;
+                %fprintf('a(%d,%d)2,3',iii,jjj); 
+                %display(a(iii,jjj));
+        else
+                up=0;down=0;left=0;right=0;upleft=0;upright=0;downleft=0;downright=0;
+                %fprintf('a(%d,%d)',iii,jjj); 
+                %display(a(iii,jjj));
+        end
+               % fprintf('\n for %d \n',a(iii,jjj));
+                if(up==0)
+                    % fprintf('+%d \n',a(iii-1,jjj));
+                    attraction(iii,jjj)=attraction(iii,jjj)+a(iii-1,jjj);
+                end
+                if(down==0)
+                    % fprintf('+%d \n',a(iii+1,jjj));
+                    attraction(iii,jjj)=attraction(iii,jjj)+a(iii+1,jjj);
+                end
+                if(left==0)
+                    % fprintf('+%d \n',a(iii,jjj-1));
+                    attraction(iii,jjj)=attraction(iii,jjj)+a(iii,jjj-1);
+                end
+                if(right==0)
+                    % fprintf('+%d \n',a(iii,jjj+1));
+                    attraction(iii,jjj)=attraction(iii,jjj)+a(iii,jjj+1);
+                end
+                if(upleft==0)
+                    % fprintf('+%d \n',a(iii-1,jjj-1));
+                    attraction(iii,jjj)=attraction(iii,jjj)+a(iii-1,jjj-1);
+                end
+                if(upright==0)
+                    % fprintf('+%d \n',a(iii-1,jjj+1));
+                    attraction(iii,jjj)=attraction(iii,jjj)+a(iii-1,jjj+1);
+                end
+                if(downleft==0)
+                    % fprintf('+%d \n',a(iii+1,jjj-1));
+                    attraction(iii,jjj)=attraction(iii,jjj)+a(iii+1,jjj-1);
+                end
+                if(downright==0)
+                   % fprintf('+%d \n',a(iii+1,jjj+1));
+                    attraction(iii,jjj)=attraction(iii,jjj)+a(iii+1,jjj+1);
+                end
+    end
+end

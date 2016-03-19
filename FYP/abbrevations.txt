@@ -1,0 +1,6 @@
+PSO                      Partical Sparm Optimization 
+SPSAM                    Sub Pixel Spatial Attraction Mapping 
+ACO                      Ant Colony Optimiation 
+MSI                      Multi Spectral Image 
+SPM                      Sub Pixel Mapping 
+SRM                      Super Resolution Mapping 

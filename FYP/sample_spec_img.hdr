@@ -1,0 +1,15 @@
+ENVI
+description = {
+  Unmixing Result [Fri Mar 15 19:51:37 2013]}
+samples = 187
+lines   = 195
+bands   = 3
+header offset = 0
+file type = ENVI Standard
+data type = 4
+interleave = bsq
+sensor type = Unknown
+byte order = 0
+wavelength units = Unknown
+band names = {
+ Unmix ([Memory1]) EM:Region #1, Unmix ([Memory1]) EM:Region #2, RMS Error}
